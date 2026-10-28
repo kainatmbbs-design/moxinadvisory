@@ -1,0 +1,47 @@
+---
+import Layout from "../layouts/Layout.astro";
+import EnquiryForm from "../components/EnquiryForm.astro";
+import { business } from "../config";
+---
+
+<Layout
+  title="Discuss your business"
+  description="Contact Moxin Sterling Advisory to discuss bookkeeping, tax and reporting support. Request a tailored quote or open an email draft."
+>
+  <section class="page-hero container">
+    <p class="eyebrow">Get in touch</p>
+    <h1>
+      A conversation
+      <br />
+      is a good beginning.
+    </h1>
+    <p class="lead">
+      Tell us a little about your business and the support you need. We can
+      discuss a suitable next step.
+    </p>
+  </section>
+  <section class="section container contact-layout">
+    <div>
+      <h2>Discuss your business.</h2>
+      <p>
+        For an introductory conversation or a tailored quote, start with a short
+        enquiry.
+      </p>
+      <a class="email" href={`mailto:${business.email}`}>
+        {business.email}
+      </a>
+      <p class="contact-note">
+        You can email directly if you prefer. Please do not include sensitive
+        financial or identity information in your initial message.
+      </p>
+      <div class="notice">
+        <h3>What happens next?</h3>
+        <p class="contact-note" style="margin:0">
+          We discuss what you need, then agree the work and fee separately. No
+          work starts simply because you send an enquiry.
+        </p>
+      </div>
+    </div>
+    <EnquiryForm />
+  </section>
+</Layout>

@@ -1,0 +1,55 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Invitation from "../../components/Invitation.astro";
+import { services } from "../../config";
+---
+
+<Layout
+  title="Bookkeeping, tax & accounting services"
+  description="Explore bookkeeping, VAT, payroll, annual accounts, Self Assessment and cash-flow planning. Request a tailored quote for your business."
+>
+  <section class="page-hero container">
+    <p class="eyebrow">Our services</p>
+    <h1>
+      Practical support.
+      <br />A clearer picture.
+    </h1>
+    <p class="lead">
+      From the records you keep each week to the decisions you make each year.
+      Find support that fits your business.
+    </p>
+  </section>
+  <section class="section container">
+    <div class="service-list">
+      {services.map((s, i) => (
+        <a class="service-item" href={`/services/${s.slug}/`}>
+          <span class="num">0{i + 1}</span>
+          <div>
+            <h3>{s.title}</h3>
+            <p>{s.description}</p>
+          </div>
+          <span class="arrow" aria-hidden="true">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="17"
+              height="17"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              aria-hidden="true"
+            >
+              <path d="M5 19 19 5M5 5h14v14" />
+            </svg>
+          </span>
+        </a>
+      ))}
+    </div>
+    <p class="contact-note" style="margin-top:30px">
+      Services are subject to an agreed scope and engagement. Information on
+      this website is general and is not advice specific to your circumstances.
+      Statutory audit is not offered.
+    </p>
+  </section>
+  <Invitation />
+</Layout>

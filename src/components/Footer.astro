@@ -1,0 +1,43 @@
+---
+import { business } from "../config";
+---
+
+<footer class="footer">
+  <div class="container footer-top">
+    <div>
+      <a class="footer-brand" href="/">
+        Moxin Sterling
+        <br />
+        <span>Advisory</span>
+      </a>
+      <p>
+        Clear explanations.
+        <br />
+        Practical accounting support.
+      </p>
+    </div>
+    <div>
+      <h2>Start a conversation</h2>
+      <a class="email" href={`mailto:${business.email}`}>
+        {business.email}
+      </a>
+      <p>Tell us a little about your business.</p>
+    </div>
+    <div>
+      <h2>Explore</h2>
+      <a href="/services/">Services</a>
+      <a href="/who-we-help/">Who we help</a>
+      <a href="/about/">About the firm</a>
+      <a href="/contact/">Contact</a>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>
+      © {new Date().getFullYear()} {business.name}
+    </span>
+    <div>
+      <a href="/privacy/">Website privacy</a>
+      <a href="/my-money-privacy/">My Money app privacy</a>
+    </div>
+  </div>
+</footer>

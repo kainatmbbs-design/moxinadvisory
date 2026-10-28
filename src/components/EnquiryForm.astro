@@ -1,0 +1,174 @@
+---
+import { business, services, site } from "../config";
+---
+
+<form
+  id="enquiry"
+  data-endpoint={site.formEndpoint}
+  data-email={business.email}
+>
+  <div class="form-grid">
+    <div class="field">
+      <label for="name">Name</label>
+      <input
+        id="name"
+        name="name"
+        autocomplete="name"
+        required
+        maxlength="120"
+      />
+    </div>
+    <div class="field">
+      <label for="email">Email</label>
+      <input
+        id="email"
+        name="email"
+        type="email"
+        autocomplete="email"
+        required
+        maxlength="254"
+      />
+    </div>
+    <div class="field full">
+      <label for="business">
+        Business name <span>(optional)</span>
+      </label>
+      <input
+        id="business"
+        name="business"
+        autocomplete="organization"
+        maxlength="160"
+      />
+    </div>
+    <div class="field">
+      <label for="type">Business type</label>
+      <select id="type" name="type" required>
+        <option value="">Please select</option>
+        <option>Sole trader</option>
+        <option>Limited company</option>
+        <option>Contractor</option>
+        <option>Start-up</option>
+        <option>Other / not sure</option>
+      </select>
+    </div>
+    <div class="field">
+      <label for="service">Service of interest</label>
+      <select id="service" name="service" required>
+        <option value="">Please select</option>
+        {services.map((s) => (
+          <option>{s.title}</option>
+        ))}
+        <option>Several services / not sure</option>
+      </select>
+    </div>
+    <div class="field full">
+      <label for="message">How can we help?</label>
+      <textarea
+        id="message"
+        name="message"
+        rows="5"
+        required
+        maxlength="2000"
+        aria-describedby="message-help"
+      ></textarea>
+      <span id="message-help" class="contact-note">
+        Please keep this brief. Do not include tax identifiers, bank details,
+        passwords or identity documents.
+      </span>
+    </div>
+  </div>
+  <div class="honeypot" aria-hidden="true">
+    <label for="website">Leave this field empty</label>
+    <input id="website" name="website" tabindex="-1" autocomplete="off" />
+  </div>
+  <p class="form-info" id="form-explanation">
+    {site.formEndpoint
+      ? "Your enquiry will be submitted to our configured form provider. Please read our website privacy information before submitting."
+      : "This form opens an email draft in your email app. Review and send the email there. Nothing is submitted to this website."}{" "}
+    Read our <a href="/privacy/">website privacy information</a>. An enquiry
+    does not create an accountant-client relationship. The scope of any work
+    will be agreed separately.
+  </p>
+  <button class="button" type="submit">
+    {site.formEndpoint ? "Send enquiry" : "Open email draft"}{" "}
+    <span aria-hidden="true">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="17"
+        height="17"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        aria-hidden="true"
+      >
+        <path d="M5 19 19 5M5 5h14v14" />
+      </svg>
+    </span>
+  </button>
+  <p
+    class="form-status"
+    id="form-status"
+    role="status"
+    aria-live="polite"
+    tabindex="-1"
+  ></p>
+  <noscript>
+    <p>
+      The form needs JavaScript to prepare your enquiry. Please email{" "}
+      <a href={`mailto:${business.email}`}>{business.email}</a> directly.
+    </p>
+  </noscript>
+</form>
+<script>
+  import { createEmailDraft, submitEnquiry } from "../lib/enquiry";
+  const form = document.querySelector<HTMLFormElement>("#enquiry");
+  const select = document.querySelector<HTMLSelectElement>("#service");
+  const requested = new URLSearchParams(location.search).get("service");
+  if (
+    select &&
+    requested &&
+    [...select.options].some((o) => o.value === requested)
+  )
+    select.value = requested;
+  form?.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    if (!form.reportValidity()) return;
+    const status = form.querySelector<HTMLElement>("#form-status")!;
+    const button = form.querySelector<HTMLButtonElement>(
+      'button[type="submit"]',
+    )!;
+    const data = Object.fromEntries(new FormData(form).entries()) as Record<
+      string,
+      string
+    >;
+    if (data.website) {
+      status.textContent = "Please leave the website field empty.";
+      return;
+    }
+    if (!form.dataset.endpoint) {
+      const draft = document.createElement("a");
+      draft.href = createEmailDraft(form.dataset.email!, data);
+      draft.target = "_blank";
+      draft.rel = "noopener noreferrer";
+      document.body.append(draft);
+      draft.click();
+      draft.remove();
+      status.textContent =
+        "Email draft requested. Please review and send it in your email app. If no draft opens, use the email link on this page. Your text remains here.";
+      return;
+    }
+    button.disabled = true;
+    status.textContent = "Submitting your enquiry…";
+    try {
+      await submitEnquiry(form.dataset.endpoint, data);
+      status.textContent =
+        "Your enquiry was accepted by the form service. Thank you for getting in touch.";
+    } catch {
+      status.textContent =
+        "Your enquiry could not be confirmed. Your text is still here. Please try again or email us directly.";
+    } finally {
+      button.disabled = false;
+    }
+  });
+</script>

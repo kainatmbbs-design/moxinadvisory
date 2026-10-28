@@ -1,0 +1,41 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Button from "../components/Button.astro";
+---
+
+<Layout
+  title="Page not found"
+  description="This page could not be found. Explore Moxin Sterling Advisory services or return to the home page."
+  noindex
+>
+  <section class="page-hero container" style="padding-bottom:90px">
+    <p class="eyebrow">404 / Page not found</p>
+    <h1>
+      Let’s find your
+      <br />
+      next step.
+    </h1>
+    <p class="lead">
+      This address does not lead to a page. You can return home or explore our
+      services.
+    </p>
+    <div class="actions">
+      <Button href="/">Return home</Button>
+      <a class="text-link" href="/services/">
+        Explore our services{" "}
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="17"
+          height="17"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"
+          aria-hidden="true"
+        >
+          <path d="M5 19 19 5M5 5h14v14" />
+        </svg>
+      </a>
+    </div>
+  </section>
+</Layout>

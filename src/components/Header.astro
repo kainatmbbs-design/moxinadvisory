@@ -1,0 +1,77 @@
+---
+import { business, navigation } from "../config";
+---
+
+<header class="header">
+  <a class="brand" href="/" aria-label={`${business.displayName} home`}>
+    <span class="monogram" aria-hidden="true">
+      MS<span>A</span>
+    </span>
+    <span>
+      Moxin Sterling<span class="brand-sub">ADVISORY</span>
+    </span>
+  </a>
+  <button
+    class="menu-toggle"
+    aria-expanded="false"
+    aria-controls="main-navigation"
+  >
+    Menu <span aria-hidden="true">☰</span>
+  </button>
+  <nav id="main-navigation" aria-label="Main navigation">
+    <ul>
+      {navigation.map((item) => (
+        <li>
+          <a
+            href={item.href}
+            aria-current={Astro.url.pathname === item.href ? "page" : undefined}
+          >
+            {item.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+    <a class="header-cta" href="/contact/">
+      Discuss your business{" "}
+      <span aria-hidden="true">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="17"
+          height="17"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"
+          aria-hidden="true"
+        >
+          <path d="M5 19 19 5M5 5h14v14" />
+        </svg>
+      </span>
+    </a>
+  </nav>
+</header>
+<script>
+  const toggle = document.querySelector<HTMLButtonElement>(".menu-toggle");
+  const nav = document.querySelector<HTMLElement>("#main-navigation");
+  toggle?.addEventListener("click", () => {
+    const open = toggle.getAttribute("aria-expanded") !== "true";
+    toggle.setAttribute("aria-expanded", String(open));
+    nav?.classList.toggle("open", open);
+  });
+  nav?.querySelectorAll("a").forEach((a) =>
+    a.addEventListener("click", () => {
+      toggle?.setAttribute("aria-expanded", "false");
+      nav.classList.remove("open");
+    }),
+  );
+  document.addEventListener("keydown", (e) => {
+    if (
+      e.key === "Escape" &&
+      toggle?.getAttribute("aria-expanded") === "true"
+    ) {
+      toggle.setAttribute("aria-expanded", "false");
+      nav?.classList.remove("open");
+      toggle.focus();
+    }
+  });
+</script>

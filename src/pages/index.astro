@@ -1,0 +1,384 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Button from "../components/Button.astro";
+import Invitation from "../components/Invitation.astro";
+import { services } from "../config";
+const faqs = [
+  [
+    "How much will it cost?",
+    "Fees depend on your business, the condition of your records and the support you need. Request a tailored quote. We will agree the scope and fee before work begins.",
+  ],
+  [
+    "Can you help if I am just starting out?",
+    "Yes. We can discuss the records you will need, the support that may be useful and a sensible starting point for your business.",
+  ],
+  [
+    "Can I move from another accountant?",
+    "We can discuss what you need and the information needed for a handover. Any work and communication with your previous adviser will be agreed with you first.",
+  ],
+  [
+    "Do I need to send sensitive documents with my enquiry?",
+    "No. Please do not send tax identifiers, bank details, passwords or identity documents through the enquiry form or initial email. A suitable way to share information can be agreed later.",
+  ],
+  [
+    "What happens after I get in touch?",
+    "We will discuss your circumstances and the support you are looking for. You can then decide whether to proceed with an agreed scope and quote. An enquiry does not create an accountant-client relationship.",
+  ],
+];
+---
+
+<Layout
+  title="Accountancy for small businesses"
+  description="Clear, approachable bookkeeping, tax and financial reporting for sole traders, contractors and small companies. Discuss your business with Moxin Sterling Advisory."
+>
+  <section class="container hero">
+    <div>
+      <p class="eyebrow">Accounting with a clear perspective</p>
+      <h1>
+        Clear accounts.
+        <br />
+        Confident business
+        <br />
+        decisions.
+      </h1>
+      <p class="intro">
+        Bookkeeping, tax and financial reporting for sole traders, contractors
+        and small businesses. Practical support, explained clearly.
+      </p>
+      <div class="actions">
+        <Button href="/contact/">Discuss your business</Button>
+        <a class="text-link" href="/services/">
+          Explore our services{" "}
+          <span aria-hidden="true">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="17"
+              height="17"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              aria-hidden="true"
+            >
+              <path d="M5 19 19 5M5 5h14v14" />
+            </svg>
+          </span>
+        </a>
+      </div>
+    </div>
+    <div
+      class="hero-art"
+      role="img"
+      aria-label="Original architectural line illustration, representing a clear perspective"
+    >
+      <span class="art-label">MOXIN STERLING / ADVISORY</span>
+      <svg viewBox="0 0 460 480" fill="none" aria-hidden="true">
+        <circle
+          cx="248"
+          cy="205"
+          r="160"
+          stroke="#B79B64"
+          stroke-opacity=".4"
+        />
+        <circle
+          cx="248"
+          cy="205"
+          r="120"
+          stroke="#B79B64"
+          stroke-opacity=".25"
+        />
+        <path
+          d="M83 345V143L248 53L412 143V345M83 143L248 235L412 143M248 235V437M83 345L248 437L412 345M138 113V375M193 83V406M303 83V406M358 113V375M83 210L248 302L412 210M83 277L248 369L412 277"
+          stroke="#B79B64"
+          stroke-width="1.1"
+        />
+        <path
+          d="M248 53L412 143V345L248 437"
+          stroke="#E9DDBF"
+          stroke-width="1.5"
+        />
+      </svg>
+      <div>
+        <p class="art-caption">
+          A clearer view.<span>A considered next step.</span>
+        </p>
+        <div class="art-bottom">
+          <span>RECORDS. REPORTING. PLANNING.</span>
+          <span aria-hidden="true">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="17"
+              height="17"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              aria-hidden="true"
+            >
+              <path d="M5 19 19 5M5 5h14v14" />
+            </svg>
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="container intro-strip">
+    <strong>Support for the way you work</strong>
+    <span>Sole traders</span>
+    <span>Limited companies</span>
+    <span>Contractors</span>
+    <span>Start-ups</span>
+  </div>
+  <section class="section container">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">01 / Our services</p>
+        <h2>
+          From everyday records
+          <br />
+          to the bigger picture.
+        </h2>
+      </div>
+      <p>
+        Good decisions begin with useful information. Choose the support you
+        need, with a clear scope and room to review it as your business changes.
+      </p>
+    </div>
+    <div class="service-list">
+      {services.map((s, i) => (
+        <a class="service-item" href={`/services/${s.slug}/`}>
+          <span class="num">0{i + 1}</span>
+          <div>
+            <h3>{s.title}</h3>
+            <p>{s.description}</p>
+          </div>
+          <span class="arrow" aria-hidden="true">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="17"
+              height="17"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              aria-hidden="true"
+            >
+              <path d="M5 19 19 5M5 5h14v14" />
+            </svg>
+          </span>
+        </a>
+      ))}
+    </div>
+  </section>
+  <section class="section dark">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">02 / Who we help</p>
+          <h2>
+            Your business.
+            <br />
+            Your next chapter.
+          </h2>
+        </div>
+        <p>
+          Whether you work for yourself or run a small team, we start by
+          understanding how your business operates.
+        </p>
+      </div>
+      <div class="audience-grid">
+        {[
+          [
+            "Sole traders",
+            "Keep business records in order and prepare for Self Assessment.",
+          ],
+          [
+            "Limited companies",
+            "Bring bookkeeping, payroll and year-end reporting together.",
+          ],
+          [
+            "Contractors",
+            "Make space for your work with practical accounting support.",
+          ],
+          [
+            "Start-ups",
+            "Establish useful records and plan for the months ahead.",
+          ],
+        ].map(([name, text]) => (
+          <article>
+            <h3>{name}</h3>
+            <p>{text}</p>
+          </article>
+        ))}
+      </div>
+      <a class="text-link" href="/who-we-help/">
+        Find support for your business{" "}
+        <span aria-hidden="true">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="17"
+            height="17"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            aria-hidden="true"
+          >
+            <path d="M5 19 19 5M5 5h14v14" />
+          </svg>
+        </span>
+      </a>
+    </div>
+  </section>
+  <section class="section container split">
+    <div>
+      <p class="eyebrow">03 / Getting started</p>
+      <h2>
+        A conversation first.
+        <br />A clear plan next.
+      </h2>
+      <p>
+        You do not need to have everything worked out before getting in touch.
+      </p>
+      <a class="text-link" href="/contact/">
+        Tell us what you need{" "}
+        <span aria-hidden="true">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="17"
+            height="17"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            aria-hidden="true"
+          >
+            <path d="M5 19 19 5M5 5h14v14" />
+          </svg>
+        </span>
+      </a>
+    </div>
+    <div class="steps">
+      <article class="step">
+        <div>
+          <h3>Tell us about your business</h3>
+          <p>
+            Share what you do, how you keep your records and where you would
+            like support.
+          </p>
+        </div>
+      </article>
+      <article class="step">
+        <div>
+          <h3>Agree the right scope</h3>
+          <p>
+            We discuss the work, responsibilities and fee, so you can make an
+            informed choice.
+          </p>
+        </div>
+      </article>
+      <article class="step">
+        <div>
+          <h3>Build a working routine</h3>
+          <p>
+            Agree how information will be shared and when you will hear from us.
+          </p>
+        </div>
+      </article>
+    </div>
+  </section>
+  <section class="container split section" style="padding-top:0">
+    <div class="founder-panel">
+      <span class="role">A personal introduction</span>
+      <span class="founder-initials" aria-hidden="true">
+        MK.
+      </span>
+      <div>
+        <p class="founder-name">Mohsin Khan</p>
+        <p class="role">Founder</p>
+      </div>
+    </div>
+    <div class="founder-copy">
+      <p class="eyebrow">04 / Meet the founder</p>
+      <h2>
+        Accounting should
+        <br />
+        make things clearer.
+      </h2>
+      <p>
+        Mohsin Khan founded Moxin Sterling Advisory with a practical focus:
+        organised records, useful reporting and conversations that help business
+        owners understand their figures.
+      </p>
+      <p>
+        The approach starts with listening. What does your business need today,
+        and what would help you make your next decision?
+      </p>
+      <a class="text-link" href="/about/">
+        About the firm{" "}
+        <span aria-hidden="true">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="17"
+            height="17"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            aria-hidden="true"
+          >
+            <path d="M5 19 19 5M5 5h14v14" />
+          </svg>
+        </span>
+      </a>
+    </div>
+  </section>
+  <section class="section approach">
+    <div class="container">
+      <p class="eyebrow">Our approach</p>
+      <div class="commitments">
+        <article>
+          <h3>Clear explanations</h3>
+          <p>
+            We aim to explain the figures and the work in straightforward
+            language.
+          </p>
+        </article>
+        <article>
+          <h3>An agreed scope</h3>
+          <p>
+            We set out what is included, what you need to provide and the fee
+            before starting.
+          </p>
+        </article>
+        <article>
+          <h3>Practical reporting</h3>
+          <p>
+            We focus on information you can use to understand your business and
+            plan ahead.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+  <section class="section container split" id="faqs">
+    <div>
+      <p class="eyebrow">A few useful answers</p>
+      <h2>Before we begin.</h2>
+      <p>
+        Have another question?
+        <br />
+        <a href="/contact/">We would be happy to discuss it.</a>
+      </p>
+    </div>
+    <div class="faq-list">
+      {faqs.map(([q, a]) => (
+        <details>
+          <summary>{q}</summary>
+          <p>{a}</p>
+        </details>
+      ))}
+    </div>
+  </section>
+  <Invitation />
+</Layout>

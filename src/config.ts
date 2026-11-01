@@ -5,6 +5,7 @@ export const business = {
   email: "contact@moxinadvisory.com",
   phone: "07343 043092",
   phoneLink: "+447343043092",
+  whatsappUrl: "https://wa.me/447343043092",
   address: "15 Pen Castell, Bangor, LL57 1NX",
   companyNumber: null,
   registeredOffice: null,

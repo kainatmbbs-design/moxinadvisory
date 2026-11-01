@@ -30,7 +30,7 @@ import { business } from "../config";
       <a class="email" href={`mailto:${business.email}`}>
         {business.email}
       </a>
-      <div class="contact-methods"><div><span>Call us</span><a href={`tel:${business.phoneLink}`}>{business.phone}</a></div><div><span>Our address</span><address>{business.address}</address></div></div>
+      <div class="contact-methods"><div><span>Message us directly</span><a class="whatsapp-contact" href={business.whatsappUrl} target="_blank" rel="noopener noreferrer">Chat on WhatsApp <span aria-hidden="true">↗</span></a></div><div><span>Call us</span><a href={`tel:${business.phoneLink}`}>{business.phone}</a></div><div><span>Our address</span><address>{business.address}</address></div></div>
       <p class="contact-note">
         You can email directly if you prefer. Please do not include sensitive
         financial or identity information in your initial message.

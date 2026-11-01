@@ -11,9 +11,9 @@ import { business } from "../config";
   <section class="page-hero container">
     <p class="eyebrow">Get in touch</p>
     <h1>
-      A conversation
+      Let’s talk about
       <br />
-      is a good beginning.
+      your next chapter.
     </h1>
     <p class="lead">
       Tell us a little about your business and the support you need. We can
@@ -22,7 +22,7 @@ import { business } from "../config";
   </section>
   <section class="section container contact-layout">
     <div>
-      <h2>Discuss your business.</h2>
+      <h2>A personal conversation.</h2>
       <p>
         For an introductory conversation or a tailored quote, start with a short
         enquiry.
@@ -30,6 +30,7 @@ import { business } from "../config";
       <a class="email" href={`mailto:${business.email}`}>
         {business.email}
       </a>
+      <div class="contact-methods"><div><span>Call us</span><a href={`tel:${business.phoneLink}`}>{business.phone}</a></div><div><span>Our address</span><address>{business.address}</address></div></div>
       <p class="contact-note">
         You can email directly if you prefer. Please do not include sensitive
         financial or identity information in your initial message.

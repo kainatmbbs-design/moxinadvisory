@@ -29,7 +29,7 @@ const canonical = new URL(Astro.url.pathname, site.origin).href;
         !site.indexing || noindex ? "noindex, nofollow" : "index, follow"
       }
     />
-    <meta name="theme-color" content="#153E38" />
+    <meta name="theme-color" content="#071D36" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_GB" />
@@ -42,7 +42,7 @@ const canonical = new URL(Astro.url.pathname, site.origin).href;
     />
     <meta
       property="og:image:alt"
-      content="Moxin Sterling Advisory. Clear accounts. Confident business decisions."
+      content="Moxin Sterling Advisory. Accountancy with perspective."
     />
     <script
       type="application/ld+json"
@@ -52,6 +52,8 @@ const canonical = new URL(Astro.url.pathname, site.origin).href;
         name: business.name,
         url: site.origin,
         email: business.email,
+        telephone: business.phoneLink,
+        address: { "@type": "PostalAddress", streetAddress: "15 Pen Castell", addressLocality: "Bangor", postalCode: "LL57 1NX", addressCountry: "GB" },
         founder: { "@type": "Person", name: business.founder },
       })}
     />

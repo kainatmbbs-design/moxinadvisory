@@ -11,7 +11,7 @@ import { business } from "../config";
         <span>Advisory</span>
       </a>
       <p>
-        Clear explanations.
+        Accountancy with perspective.
         <br />
         Practical accounting support.
       </p>
@@ -21,7 +21,7 @@ import { business } from "../config";
       <a class="email" href={`mailto:${business.email}`}>
         {business.email}
       </a>
-      <p>Tell us a little about your business.</p>
+      <p><a href={`tel:${business.phoneLink}`}>{business.phone}</a><br />{business.address}</p>
     </div>
     <div>
       <h2>Explore</h2>

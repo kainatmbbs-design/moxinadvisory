@@ -1,0 +1,6 @@
+---
+// Place the supplied original PNG here, then rebuild to use it across the site.
+const available = Object.keys(import.meta.glob('../../public/moxin-logo.png')).length > 0;
+const { hero = false } = Astro.props;
+---
+{available ? <img class={hero ? 'original-logo hero-logo' : 'original-logo header-logo'} src="/moxin-logo.png" alt="Moxin Sterling Advisory" width="1254" height="1254" loading="eager" /> : hero ? <div class="brand-seal" aria-label="Moxin Sterling Advisory"><span class="seal-letters">MS<span>A</span></span><span class="seal-name">MOXIN STERLING</span><span class="seal-sub">A D V I S O R Y</span></div> : <span class="monogram" aria-hidden="true">MS<span>A</span></span>}

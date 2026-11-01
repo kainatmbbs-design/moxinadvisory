@@ -36,7 +36,7 @@ with sync_playwright() as p:
  page.get_by_role('button',name='Open email draft').click()
  assert 'Email draft requested' in page.locator('#form-status').inner_text()
  assert page.locator('#message').input_value()=='Please discuss bookkeeping.'
- assert page.locator('a[href="mailto:mohsikhan@yahoo.com"]').count()>=1
+ assert page.locator('a[href="mailto:contact@moxinadvisory.com"]').count()>=1
  page.screenshot(path=f'{out}/contact-1440.png',full_page=True)
  # Configured adapter: mock rejection, malformed success, then confirmed acceptance.
  page.evaluate("document.querySelector('#enquiry').dataset.endpoint='https://forms.example.test/enquiry'")

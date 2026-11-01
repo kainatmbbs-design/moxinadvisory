@@ -1,8 +1,11 @@
 export const business = {
-  name: "Moxin Sterling Advisory Ltd",
+  name: "Moxin Sterling Advisory",
   displayName: "Moxin Sterling Advisory",
   founder: "Mohsin Khan",
-  email: "mohsikhan@yahoo.com",
+  email: "contact@moxinadvisory.com",
+  phone: "07343 043092",
+  phoneLink: "+447343043092",
+  address: "15 Pen Castell, Bangor, LL57 1NX",
   companyNumber: null,
   registeredOffice: null,
   jurisdiction: null,

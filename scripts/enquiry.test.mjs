@@ -10,9 +10,9 @@ const data = {
   message: "A question?\nSecond line.",
 };
 test("email draft preserves all fields and safely encodes input", () => {
-  const url = new URL(createEmailDraft("mohsikhan@yahoo.com", data));
+  const url = new URL(createEmailDraft("contact@moxinadvisory.com", data));
   assert.equal(url.protocol, "mailto:");
-  assert.equal(url.pathname, "mohsikhan@yahoo.com");
+  assert.equal(url.pathname, "contact@moxinadvisory.com");
   assert.equal(
     url.searchParams.get("subject"),
     "Business enquiry: VAT returns",

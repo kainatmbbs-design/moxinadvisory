@@ -1,12 +1,12 @@
 ---
+import BrandImage from "./BrandImage.astro";
 import { business, navigation } from "../config";
 ---
 
+<div class="contact-bar"><div class="container"><span>Based in Bangor. Supporting businesses across the UK.</span><a href={`tel:${business.phoneLink}`}>{business.phone}</a><a href={`mailto:${business.email}`}>{business.email}</a></div></div>
 <header class="header">
   <a class="brand" href="/" aria-label={`${business.displayName} home`}>
-    <span class="monogram" aria-hidden="true">
-      MS<span>A</span>
-    </span>
+    <BrandImage />
     <span>
       Moxin Sterling<span class="brand-sub">ADVISORY</span>
     </span>
@@ -32,7 +32,7 @@ import { business, navigation } from "../config";
       ))}
     </ul>
     <a class="header-cta" href="/contact/">
-      Discuss your business{" "}
+      Book a consultation{" "}
       <span aria-hidden="true">
         <svg
           xmlns="http://www.w3.org/2000/svg"

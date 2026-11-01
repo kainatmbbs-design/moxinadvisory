@@ -27,3 +27,13 @@ This rebuild is prepared separately from the published gh-pages version. The ori
 ## Colourful design refresh
 
 A subsequent refresh introduces deep plum, lilac, lime and coral, bold homepage headings, rounded service/audience cards and a practical perspective section linking to existing service information. The original MSA logo and confirmed contact details are retained. JW Hinks was supplied as visual direction, but direct access to that site was denied by the environment's network policy; this design does not claim to reproduce its layout or content.
+
+## Screenshot-led blue and teal refinement
+
+Updated the design using the owner's JW Hinks screenshots as visual direction: blue/teal/white palette, restrained line icons, simple sections and a direct contact/location block using the confirmed Bangor address. No reference-site testimonials, memberships or accreditations are copied.
+
+Decorative numbering is removed from the homepage services, principles, business audience and process, and from the service listing page. The stylesheet is consolidated into one maintained design rather than accumulating theme overrides.
+
+Mobile removes the oversized hero logo panel (the original logo stays in the header), uses compact service icons and suppresses decorative lower-page graphics. WhatsApp becomes an accessible icon button on phones to reduce content overlap; the contact-page text link is retained.
+
+Checks: Astro check and 14-page build passed; existing browser suite passed on all 13 normal pages at 375, 768 and 1440 pixels. Additional checks on home, services, about and contact passed at 320, 375, 390, 430, 768 and 1440 pixels: no horizontal overflow, no standalone decorative numbering, original header logo loaded and WhatsApp visible. Updated desktop and mobile preview images are in docs/screenshots. Publication remains separate from this source update.

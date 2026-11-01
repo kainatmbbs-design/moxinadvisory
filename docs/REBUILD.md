@@ -10,7 +10,7 @@ The public display name is Moxin Sterling Advisory. No unconfirmed Limited compa
 
 ## Logo asset
 
-The image shown in chat was visible but its original file was not exposed to the execution workspace. A temporary typographic MSA mark is used. Save the original logo as `public/moxin-logo.png` and rebuild: `BrandImage.astro` automatically uses it in the header and homepage. Do not represent the temporary mark as the supplied original logo.
+The owner uploaded the original 1254 × 1254 PNG to GitHub. It is stored unchanged at `public/moxin-logo.png` and displayed by `BrandImage.astro` in the header and homepage. The temporary typographic mark has been removed.
 
 ## Validation
 
@@ -22,4 +22,4 @@ The enquiry form opens an email draft addressed to contact@moxinadvisory.com. Vi
 
 ## Publication
 
-This rebuild is prepared separately from the published gh-pages version. Add the original logo and review before replacing production. The existing custom domain is moxinadvisory.com. Keep the CNAME and .nojekyll when deploying static output. Search indexing remains in its existing disabled setting. The website privacy page still identifies legal and retention details needing confirmation.
+This rebuild is prepared separately from the published gh-pages version. The original logo is integrated. Review before replacing production. The existing custom domain is moxinadvisory.com. Keep the CNAME and .nojekyll when deploying static output. Search indexing remains in its existing disabled setting. The website privacy page still identifies legal and retention details needing confirmation.

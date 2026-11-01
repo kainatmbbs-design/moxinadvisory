@@ -23,3 +23,7 @@ The enquiry form opens an email draft addressed to contact@moxinadvisory.com. Vi
 ## Publication
 
 This rebuild is prepared separately from the published gh-pages version. The original logo is integrated. Review before replacing production. The existing custom domain is moxinadvisory.com. Keep the CNAME and .nojekyll when deploying static output. Search indexing remains in its existing disabled setting. The website privacy page still identifies legal and retention details needing confirmation.
+
+## Colourful design refresh
+
+A subsequent refresh introduces deep plum, lilac, lime and coral, bold homepage headings, rounded service/audience cards and a practical perspective section linking to existing service information. The original MSA logo and confirmed contact details are retained. JW Hinks was supplied as visual direction, but direct access to that site was denied by the environment's network policy; this design does not claim to reproduce its layout or content.

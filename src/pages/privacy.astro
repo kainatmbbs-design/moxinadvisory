@@ -1,0 +1,77 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { business } from "../config";
+---
+
+<Layout
+  title="Website privacy"
+  description="How website enquiries and email correspondence are handled by Moxin Sterling Advisory. Separate information is available for the My Money app."
+>
+  <section class="page-hero container">
+    <p class="eyebrow">Website information</p>
+    <h1>Website privacy.</h1>
+    <p class="lead">
+      This page describes the website’s email-draft enquiry mode. It does not
+      cover the My Money app.
+    </p>
+  </section>
+  <article class="section container prose">
+    <p>Last updated: 28 October 2026.</p>
+    <h2>Who to contact</h2>
+    <p>
+      For questions about website enquiries, contact {business.name} at{" "}
+      <a href={`mailto:${business.email}`}>{business.email}</a>.
+    </p>
+    <h2>The enquiry form</h2>
+    <p>
+      In the current email-draft mode, the website does not send form entries to
+      a form service or store them in a website database. The form prepares a
+      draft in your email app containing your name, email address, optional
+      business name, business type, service of interest and message. You decide
+      whether to send it.
+    </p>
+    <p>
+      If you send that email, your email provider and the recipient’s email
+      provider process it. The recipient address is a Yahoo email address. Your
+      message is used to read and respond to your enquiry and discuss any
+      services you request. Please send only the information needed for that
+      conversation.
+    </p>
+    <h2>Visiting the website</h2>
+    <p>
+      The website does not include analytics, advertising trackers, embedded
+      maps or chat widgets. It does not set application cookies or use browser
+      storage. The static hosting provider may process connection information
+      such as IP addresses and request logs when delivering pages. The host and
+      its privacy information must be identified before public launch.
+    </p>
+    <h2>Enquiries and your choices</h2>
+    <p>
+      Please do not include tax identifiers, bank details, passwords or identity
+      documents in an initial enquiry. Contact us if you want to ask about
+      access to, correction of or deletion of correspondence. Rights and any
+      applicable exceptions depend on the relevant data protection law. You may
+      also contact the UK Information Commissioner’s Office at{" "}
+      <a href="https://ico.org.uk/">ico.org.uk</a>.
+    </p>
+    <h2>Before using professional services</h2>
+    <p>
+      An enquiry does not create an accountant-client relationship. Data
+      handling for an engagement will need to be explained separately with the
+      agreed work.
+    </p>
+    <h2>Publication status</h2>
+    <p>
+      The controller’s legal details, the lawful basis for handling enquiries,
+      the retention period, hosting provider and any international transfer
+      arrangements are awaiting confirmation. This page must be reviewed with
+      those details before public launch. If a submission provider is enabled,
+      this notice must be updated before it receives enquiries.
+    </p>
+    <h2>My Money app</h2>
+    <p>
+      The app has separate data handling information. See{" "}
+      <a href="/my-money-privacy/">My Money app privacy</a>.
+    </p>
+  </article>
+</Layout>

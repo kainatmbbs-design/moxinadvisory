@@ -1,0 +1,25 @@
+---
+interface Props {
+  href: string;
+  secondary?: boolean;
+}
+const { href, secondary = false } = Astro.props;
+---
+
+<a href={href} class:list={["button", { secondary }]}>
+  <slot />
+  <span aria-hidden="true">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="17"
+      height="17"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="1.5"
+      aria-hidden="true"
+    >
+      <path d="M5 19 19 5M5 5h14v14" />
+    </svg>
+  </span>
+</a>

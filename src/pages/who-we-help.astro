@@ -1,0 +1,91 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Invitation from "../components/Invitation.astro";
+const groups = [
+  {
+    title: "Sole traders",
+    text: "When you work for yourself, business administration can take time away from the work you enjoy. Keep records organised, understand your income and expenses, and discuss the information needed for your tax return.",
+    links: [
+      ["Bookkeeping", "bookkeeping"],
+      ["Self Assessment", "self-assessment"],
+    ],
+  },
+  {
+    title: "Limited companies",
+    text: "Running a company brings regular reporting responsibilities. Bring together your bookkeeping, pay information and year-end records, with a scope that reflects the way your company operates.",
+    links: [
+      ["Annual accounts & Corporation Tax", "annual-accounts-corporation-tax"],
+      ["Payroll", "payroll"],
+      ["VAT returns", "vat"],
+    ],
+  },
+  {
+    title: "Contractors",
+    text: "You may work through a company or as a sole trader. We start by understanding your working arrangements and records, then discuss the accounting support you need. Specialist advice outside the agreed scope will be identified separately.",
+    links: [
+      ["Bookkeeping", "bookkeeping"],
+      ["Annual accounts & Corporation Tax", "annual-accounts-corporation-tax"],
+    ],
+  },
+  {
+    title: "Start-ups",
+    text: "A useful routine starts with clear records. Discuss bookkeeping, reporting and a cash-flow plan based on your expected income and costs. Plans can be reviewed as your business develops.",
+    links: [
+      ["Bookkeeping", "bookkeeping"],
+      [
+        "Management accounts & cash-flow planning",
+        "management-accounts-cash-flow",
+      ],
+    ],
+  },
+];
+---
+
+<Layout
+  title="Accounting support for your business"
+  description="Accounting support for sole traders, limited companies, contractors and start-ups. Find services suited to your business and its next step."
+>
+  <section class="page-hero container">
+    <p class="eyebrow">Who we help</p>
+    <h1>
+      Different businesses.
+      <br />A considered approach.
+    </h1>
+    <p class="lead">
+      Your working day, your records and your plans shape the support you need.
+      That is where our conversation starts.
+    </p>
+  </section>
+  <section class="container section">
+    {groups.map((g) => (
+      <article class="business-row">
+        <h2>{g.title}</h2>
+        <div>
+          <p>{g.text}</p>
+          <div class="links">
+            {g.links.map(([title, slug]) => (
+              <a class="text-link" href={`/services/${slug}/`}>
+                {title}{" "}
+                <span aria-hidden="true">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="17"
+                    height="17"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    aria-hidden="true"
+                  >
+                    <path d="M5 19 19 5M5 5h14v14" />
+                  </svg>
+                </span>
+              </a>
+            ))}
+          </div>
+        </div>
+      </article>
+    ))}
+  </section>
+  <Invitation />
+</Layout>

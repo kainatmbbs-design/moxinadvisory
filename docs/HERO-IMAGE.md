@@ -1,7 +1,7 @@
-# Finance illustration hero
+# Accounting-desk hero illustration
 
-The owner requested an original finance-led design instead of a staged office. The desktop hero now uses a generated editorial illustration: a financial report, gold cash-flow curve, translucent chart panels and navy architectural forms. This is conceptual artwork, not an image of the firm's premises and not real financial performance data.
+The latest owner-requested image depicts British pound notes, a dark calculator, accounting papers and graphs, a gold pen and a navy folder. It is generated illustrative artwork, not a photograph of actual premises or real financial information.
 
-The original image is preserved at /workspace/generated_images/exec-edd1f717-7cd3-4b8e-99fb-c1d2d93d4f84.png and copied unchanged to public/finance-hero.png. Prebuild generates 800px and 1400px WebP variants. Company name and caption are accessible website text, not generated lettering. The original MSA logo remains in the header.
+The original is retained at /workspace/generated_images/exec-bd5796a2-c7c2-4712-93ff-647df1230abf.png and copied unchanged to public/finance-hero.png. Prebuild creates 800px and 1400px WebP variants. Company name and caption remain clear HTML text over the image, and the original MSA logo stays in the header.
 
-The desktop-only picture source avoids downloading the illustration on mobile, retaining the compact phone hero. Source changes are separate from gh-pages publication.
+Desktop/tablet use the image. Mobile retains the compact text hero without downloading it. This source update is separate from gh-pages publication.

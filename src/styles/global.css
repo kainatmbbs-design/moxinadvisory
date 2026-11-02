@@ -399,3 +399,36 @@ textarea { resize: vertical; min-height: 145px; }
   .footer-top>div:last-child { display: grid; grid-template-columns: 1fr 1fr; column-gap: 20px; }
   .footer-top>div:last-child h2 { grid-column: 1/-1; margin-bottom: 12px; }
 }
+
+/* Compact homepage rhythm and a final contact block directly above the footer. */
+.home-page .section { padding-block: 34px; }
+.home-page .section-head { margin-bottom: 22px; gap: 35px; }
+.home-page .section-head p { margin-bottom: 0; }
+.home-page .faq-section, .home-page .home-contact { padding-block: 34px; }
+.home-page .pricing-preview { padding-block: 24px; }
+.home-page .invitation { padding-block: 30px; }
+.home-page .invitation p { margin-bottom: 0; }
+.home-page .home-contact-grid { gap: 45px; }
+.home-page .location-panel { padding: 28px; }
+@media(max-width:760px) {
+  .home-page .section { padding-block: 22px; }
+  .home-page .section-head { margin-bottom: 18px; gap: 12px; }
+  .home-page .faq-section, .home-page .home-contact { padding-block: 24px; }
+  .home-page .pricing-preview, .home-page .invitation { padding-block: 22px; }
+  .home-page .perspective-section { display: none; }
+  .home-page .home-contact-grid { gap: 22px; }
+  .home-page .location-panel { padding: 22px; }
+  .home-page .location-panel>svg { width: 32px; height: 32px; margin-bottom: 14px; }
+  .home-page .location-panel h2 { margin-bottom: 16px; }
+  .home-page .invitation .button { margin-top: 16px; }
+  .review-grid { display: block; background: #f7f3eb; border: 1px solid #e5dccb; }
+  .review-card { display: grid; grid-template-columns: minmax(0,1fr) auto; gap: 10px 8px; padding: 16px; background: transparent; border: 0; border-bottom: 1px solid #ded4c2; }
+  .review-card:last-child { border-bottom: 0; }
+  .review-stars { grid-column: 2; grid-row: 1; align-self: start; font-size: 15px; letter-spacing: 1px; line-height: 1.5; margin: 0; white-space: nowrap; }
+  .review-card blockquote { grid-column: 1/-1; grid-row: 2; font-size: 13px; margin: 0; }
+  .review-card blockquote p { line-height: 1.65; margin-bottom: 0; }
+  .review-card figcaption { grid-column: 1; grid-row: 1; }
+  .review-card figcaption strong { font-size: 13px; }
+  .review-card figcaption>span { font-size: 10px; line-height: 1.4; margin-top: 3px; }
+  .review-card>.text-link { grid-column: 1/-1; }
+}

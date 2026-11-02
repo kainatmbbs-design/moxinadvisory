@@ -9,7 +9,7 @@ with sync_playwright() as p:
  page=browser.new_page()
  errors=[]
  page.on('pageerror',lambda error:errors.append(str(error)))
- paths=['/','/services/','/who-we-help/','/about/','/contact/','/privacy/','/my-money-privacy/','/services/bookkeeping/','/services/vat/','/services/payroll/','/services/annual-accounts-corporation-tax/','/services/self-assessment/','/services/management-accounts-cash-flow/']
+ paths=['/','/pricing/','/services/','/who-we-help/','/about/','/contact/','/privacy/','/my-money-privacy/','/services/bookkeeping/','/services/vat/','/services/payroll/','/services/annual-accounts-corporation-tax/','/services/self-assessment/','/services/management-accounts-cash-flow/']
  for width in [375,768,1440]:
   page.set_viewport_size({'width':width,'height':950})
   for path in paths:

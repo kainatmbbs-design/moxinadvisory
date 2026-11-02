@@ -4,6 +4,7 @@ export const GET: APIRoute = () => {
   const paths = [
     "/",
     "/services/",
+    "/pricing/",
     "/who-we-help/",
     "/about/",
     "/contact/",

@@ -1,0 +1,27 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Button from '../components/Button.astro';
+import Invitation from '../components/Invitation.astro';
+import { packages, serviceFees } from '../data/pricing';
+---
+<Layout title="Accounting prices & starting fees" description="Explore Moxin Sterling Advisory starting fees: sole-trader accounting from £30/month, company packages from £90/month and simple Self Assessment from £100.">
+  <section class="page-hero container">
+    <p class="eyebrow">CLEAR FEES. A PERSONAL SERVICE.</p>
+    <h1>Professional support.<br />A straightforward starting price.</h1>
+    <p class="lead">Choose a starting point for your business. We’ll discuss what you need and agree the work and fee before we begin.</p>
+  </section>
+  <section class="section container" aria-labelledby="package-heading">
+    <h2 id="package-heading">Support that fits your business.</h2>
+    <div class="pricing-packages">{packages.map((plan,i)=><article class:list={['pricing-package',{'pricing-featured':i===1}]}>
+      <h3>{plan.name}</h3><p class="pricing-from">{i<2?'From':'PERSONAL TO YOU'}</p><p class="pricing-amount">{plan.from}</p><p class="pricing-unit">{plan.unit}</p>
+      <p>{plan.description}</p><p class="pricing-detail">{plan.detail}</p><p class="pricing-range">{plan.range}</p><Button href="/contact/">Request your quote</Button>
+    </article>)}</div>
+    <p class="pricing-note">Starting fees are for straightforward work with organised records. The scope of each package is agreed individually; the services mentioned are options to discuss, rather than a promise that every service is included at the starting fee.</p>
+  </section>
+  <section class="section container pricing-services" aria-labelledby="fee-heading">
+    <p class="eyebrow">INDIVIDUAL SERVICES</p><h2 id="fee-heading">Know your starting point.</h2>
+    <div class="fee-list">{serviceFees.map(service=><article class="fee-row"><div><h3>{service.name}</h3><p>{service.note}</p></div><div class="fee-amount"><strong>{service.fee}</strong><span>{service.unit}</span></div></article>)}</div>
+    <div class="notice pricing-explanation"><h3>What your quote will cover</h3><p>These are guide prices, not a binding quote. Your written quote will confirm the agreed services and total payable, including any applicable VAT and software charges, before you commit.</p><p>If a service is included in your monthly package, it is not automatically charged again as a separate service. Catch-up work, complex transactions and additional requirements are priced separately by agreement.</p></div>
+  </section>
+  <Invitation />
+</Layout>

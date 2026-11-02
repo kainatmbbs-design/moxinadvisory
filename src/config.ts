@@ -19,6 +19,7 @@ export const site = {
 };
 export const navigation = [
   { label: "Services", href: "/services/" },
+  { label: "Pricing", href: "/pricing/" },
   { label: "Who we help", href: "/who-we-help/" },
   { label: "About", href: "/about/" },
   { label: "FAQs", href: "/#faqs" },

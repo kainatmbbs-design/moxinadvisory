@@ -1,6 +1,8 @@
 ---
 // Save the supplied original photograph in public/founder.jpg (or .png/.jpeg/.webp).
 const photographs = Object.keys(import.meta.glob('../../public/founder.{jpg,jpeg,png,webp}'));
-const photo = photographs[0]?.replace('../../public', '');
+const original = photographs[0]?.replace('../../public', '');
+const optimized = Object.keys(import.meta.glob('../../public/founder-860.webp'))[0]?.replace('../../public', '');
+const photo = optimized || original;
 ---
 {photo ? <figure class="founder-photo"><img src={photo} alt="Mohsin Khan, founder of Moxin Sterling Advisory" width="1254" height="1254" loading="lazy" decoding="async" /><figcaption><strong>Mohsin Khan</strong><span>Founder · Moxin Sterling Advisory</span></figcaption></figure> : <div class="founder-panel"><span class="role">Meet the founder</span><span class="founder-initials" aria-hidden="true">MK.</span><div><p class="founder-name">Mohsin Khan</p><p class="role">Founder · Moxin Sterling Advisory</p></div></div>}

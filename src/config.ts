@@ -14,7 +14,7 @@ export const business = {
 };
 export const site = {
   origin: import.meta.env.SITE_ORIGIN || "https://moxinadvisory.com",
-  indexing: import.meta.env.PUBLIC_INDEXING === "true",
+  indexing: import.meta.env.PUBLIC_INDEXING !== "false",
   formEndpoint: import.meta.env.PUBLIC_FORM_ENDPOINT || "",
 };
 export const navigation = [

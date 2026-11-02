@@ -52,7 +52,11 @@ const canonical = new URL(Astro.url.pathname, site.origin).href;
       type="application/ld+json"
       set:html={JSON.stringify({
         "@context": "https://schema.org",
-        "@type": "Organization",
+        "@type": "AccountingService",
+        "@id": new URL("/#business", site.origin).href,
+        logo: new URL("/moxin-logo-640.webp", site.origin).href,
+        image: new URL("/moxin-logo-640.webp", site.origin).href,
+        areaServed: { "@type": "Country", name: "United Kingdom" },
         name: business.name,
         url: site.origin,
         email: business.email,

@@ -6,7 +6,9 @@ const { hero = false } = Astro.props;
 ---
 <img
   class={hero ? 'original-logo hero-logo' : 'original-logo header-logo'}
-  src="/moxin-logo.png"
+  src={hero ? '/moxin-logo-640.webp' : '/moxin-logo-160.webp'}
+  srcset="/moxin-logo-160.webp 160w, /moxin-logo-640.webp 640w"
+  sizes={hero ? '(max-width: 760px) 68px, 295px' : '(max-width: 760px) 52px, 68px'}
   alt="Moxin Sterling Advisory"
   width="1254"
   height="1254"

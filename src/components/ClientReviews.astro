@@ -1,0 +1,18 @@
+---
+import { clientReviews, googleReviews } from '../data/client-reviews';
+const hasProfile = /^https:\/\/(?:www\.)?(?:google\.com|google\.co\.uk|g\.page|maps\.app\.goo\.gl)(?:\/|$)/.test(googleReviews.profileUrl);
+const hasRating = hasProfile && googleReviews.rating !== null && googleReviews.rating >= 1 && googleReviews.rating <= 5 && googleReviews.reviewCount !== null && googleReviews.reviewCount > 0 && Boolean(googleReviews.checkedOn);
+---
+{(clientReviews.length > 0 || hasProfile) && <section class="section container client-reviews" aria-labelledby="client-review-heading">
+  <div class="section-head"><div><p class="eyebrow">CLIENT EXPERIENCES</p><h2 id="client-review-heading">In our clients’ words.</h2></div>
+    {hasProfile && <div class="google-review-summary">
+      {hasRating && <><p class="google-rating"><strong>{googleReviews.rating} / 5</strong> on Google</p><p>Based on {googleReviews.reviewCount} reviews. Checked {googleReviews.checkedOn}.</p></>}
+      <a class="text-link" href={googleReviews.profileUrl} target="_blank" rel="noopener noreferrer">Read reviews on Google <span aria-hidden="true">↗</span></a>
+    </div>}
+  </div>
+  {clientReviews.length > 0 && <div class="review-grid">{clientReviews.map(review => <figure class="review-card">
+    {review.stars && <div class="review-stars" role="img" aria-label={`${review.stars} out of 5 stars`}>{Array.from({length:review.stars},()=> <span aria-hidden="true">★</span>)}</div>}
+    <blockquote><p>{review.quote}</p></blockquote><figcaption><strong>{review.author}</strong>{review.attribution && <span>{review.attribution}</span>}</figcaption>
+    {review.sourceUrl && <a class="text-link" href={review.sourceUrl} target="_blank" rel="noopener noreferrer">Read original review</a>}
+  </figure>)}</div>}
+</section>}

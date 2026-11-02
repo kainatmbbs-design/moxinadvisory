@@ -1,0 +1,42 @@
+{
+  "date": "2026-11-02",
+  "accessibility": {
+    "engine": "axe-core 4.10.3",
+    "tags": [
+      "wcag2a",
+      "wcag2aa",
+      "wcag21aa"
+    ],
+    "paths": [
+      "/",
+      "/services/",
+      "/services/vat/",
+      "/about/",
+      "/contact/",
+      "/privacy/"
+    ],
+    "widths": [
+      375,
+      1440
+    ],
+    "violations": []
+  },
+  "seo": {
+    "indexing": "enabled",
+    "sitemap_urls": 12,
+    "404": "noindex",
+    "structured_data": "AccountingService, confirmed address and telephone, no unverified rating"
+  },
+  "reviews": "Hidden until genuine reviews or Google listing are supplied",
+  "images": {
+    "original_png_bytes": 1539861,
+    "header_webp_bytes": 7790,
+    "hero_webp_bytes": 41668
+  },
+  "limits": [
+    "Local build audit; public domain not verified",
+    "Automated accessibility checks are not a full accessibility certification",
+    "Email drafts and mocked form adapter tested; mailbox delivery not tested",
+    "No Google rating or client testimonial supplied"
+  ]
+}

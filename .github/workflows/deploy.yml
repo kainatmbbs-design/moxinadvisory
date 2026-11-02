@@ -19,7 +19,7 @@ jobs:
     env:
       ASTRO_TELEMETRY_DISABLED: "1"
       SITE_ORIGIN: ${{ vars.SITE_ORIGIN || 'https://moxinadvisory.com' }}
-      PUBLIC_INDEXING: ${{ vars.PUBLIC_INDEXING || 'false' }}
+      PUBLIC_INDEXING: ${{ vars.PUBLIC_INDEXING || 'true' }}
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-node@v6

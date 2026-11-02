@@ -337,3 +337,14 @@ textarea { resize: vertical; min-height: 145px; }
   .whatsapp-float { width: 50px; height: 50px; padding: 12px; justify-content: center; }
   .whatsapp-float span { display: none; }
 }
+
+.client-reviews { border-top: 1px solid var(--border); }
+.review-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 24px; }
+.review-card { margin: 0; padding: 28px; background: #f7f3eb; border-top: 3px solid #b58a42; }
+.review-stars { color: #85612b; font-size: 23px; letter-spacing: 3px; margin-bottom: 18px; }
+.review-card blockquote { margin: 0 0 22px; font-size: 15px; }
+.review-card figcaption strong { display: block; font-size: 14px; }
+.review-card figcaption>span { display: block; font-size: 12px; color: var(--muted); margin-top: 6px; }
+.google-review-summary p { font-size: 12px; margin-bottom: 8px; }
+.google-review-summary .google-rating { font-size: 18px; color: var(--navy); }
+@media(max-width:760px) { .review-grid { grid-template-columns: 1fr; } .review-card { padding: 24px; } }

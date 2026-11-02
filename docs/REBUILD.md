@@ -37,3 +37,11 @@ Decorative numbering is removed from the homepage services, principles, business
 Mobile removes the oversized hero logo panel (the original logo stays in the header), uses compact service icons and suppresses decorative lower-page graphics. WhatsApp becomes an accessible icon button on phones to reduce content overlap; the contact-page text link is retained.
 
 Checks: Astro check and 14-page build passed; existing browser suite passed on all 13 normal pages at 375, 768 and 1440 pixels. Additional checks on home, services, about and contact passed at 320, 375, 390, 430, 768 and 1440 pixels: no horizontal overflow, no standalone decorative numbering, original header logo loaded and WhatsApp visible. Updated desktop and mobile preview images are in docs/screenshots. Publication remains separate from this source update.
+
+## Bright yellow and black reference direction
+
+The latest owner-supplied screenshot inspired a black call bar, self-hosted Poppins typography, bold yellow split hero and geometric circular graphics around the original MSA logo. The external brand's photograph, logo and claims are not reused. The business number is described as a phone contact, not freephone.
+
+Poppins 400/500/600/700 Latin font files are served with the website via the pinned @fontsource/poppins dependency; there is no external font request. Existing removed homepage sections remain absent. The compact mobile service layout is preserved, and the large hero illustration stays hidden on phones.
+
+Validation: Astro check and 14-page build passed. The existing browser suite passed on 13 normal pages at 375, 768 and 1440 pixels. An initial 768px perspective-card overflow from the wider typeface was corrected using minmax(0, 1fr) grid tracks. Additional homepage checks passed at 320, 375, 430, 768, 1024 and 1440 pixels, with loaded original logo and fonts. Updated review screenshots are home-preview.png and mobile-preview.png. These source changes have not been published to gh-pages.

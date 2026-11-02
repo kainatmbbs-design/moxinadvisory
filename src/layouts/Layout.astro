@@ -2,6 +2,10 @@
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { business, site } from "../config";
+import "@fontsource/poppins/latin-400.css";
+import "@fontsource/poppins/latin-500.css";
+import "@fontsource/poppins/latin-600.css";
+import "@fontsource/poppins/latin-700.css";
 import "../styles/global.css";
 interface Props {
   title: string;
@@ -29,7 +33,7 @@ const canonical = new URL(Astro.url.pathname, site.origin).href;
         !site.indexing || noindex ? "noindex, nofollow" : "index, follow"
       }
     />
-    <meta name="theme-color" content="#10446D" />
+    <meta name="theme-color" content="#171717" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_GB" />

@@ -43,6 +43,7 @@ export const clientReviews: ClientReview[] = [
   {
     author: 'Michael Roberts',
     attribution: 'Small Business Owner',
+    stars: 5,
     quote: 'Really impressed with the service from Moxin Sterling Advisory. They’re professional, approachable and always happy to help with any questions. The whole accounting process has been straightforward and stress-free. I’d definitely recommend them to anyone looking for a reliable accountant.',
   },
 ];

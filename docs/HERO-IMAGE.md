@@ -1,7 +1,7 @@
-# Branded illustrative accountancy-office hero
+# Finance illustration hero
 
-The latest owner-requested image is an AI-generated concept of an accountancy firm reception, with Moxin Sterling Advisory clearly displayed on the central wall. It is illustrative, not documentary evidence of an actual firm office. The generated original is preserved at /workspace/generated_images/exec-736c0c12-1c2a-4a85-9063-65fc51907297.png and copied unchanged to public/accounting-office.png.
+The owner requested an original finance-led design instead of a staged office. The desktop hero now uses a generated editorial illustration: a financial report, gold cash-flow curve, translucent chart panels and navy architectural forms. This is conceptual artwork, not an image of the firm's premises and not real financial performance data.
 
-The original MSA logo remains in the header. Prebuild creates 800px and 1400px WebP variants. The desktop hero uses a centered crop to keep the company sign legible. Mobile retains its compact text hero and does not download the office image.
+The original image is preserved at /workspace/generated_images/exec-edd1f717-7cd3-4b8e-99fb-c1d2d93d4f84.png and copied unchanged to public/finance-hero.png. Prebuild generates 800px and 1400px WebP variants. Company name and caption are accessible website text, not generated lettering. The original MSA logo remains in the header.
 
-The source replacement is separate from gh-pages publication.
+The desktop-only picture source avoids downloading the illustration on mobile, retaining the compact phone hero. Source changes are separate from gh-pages publication.

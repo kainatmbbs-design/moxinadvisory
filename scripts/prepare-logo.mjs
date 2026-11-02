@@ -14,11 +14,11 @@ if (existsSync(founder)) {
   await sharp(founder).resize(860, 860, { fit: 'inside', withoutEnlargement: true }).webp({ quality: 88 }).toFile(output);
 }
 
-// Generated illustrative office image: responsive web variants for the desktop hero.
-const office = fileURLToPath(new URL('../public/accounting-office.png', import.meta.url));
+// Original finance illustration: responsive web variants for the desktop hero.
+const office = fileURLToPath(new URL('../public/finance-hero.png', import.meta.url));
 if (existsSync(office)) {
   for (const width of [800, 1400]) {
-    const output = fileURLToPath(new URL(`../public/accounting-office-${width}.webp`, import.meta.url));
+    const output = fileURLToPath(new URL(`../public/finance-hero-${width}.webp`, import.meta.url));
     await sharp(office).resize({ width, withoutEnlargement: true }).webp({ quality: 85 }).toFile(output);
   }
 }

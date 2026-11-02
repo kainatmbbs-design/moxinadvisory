@@ -16,12 +16,12 @@ const questions = [
  <div class="home-page">
  <section class="new-hero"><div class="container hero-grid">
   <div class="hero-copy"><p class="eyebrow">MOXIN STERLING ADVISORY · ACCOUNTING & TAX</p><h1>Clearer numbers.<br /><em>Brighter possibilities.</em></h1><p class="hero-lead">Personal accounting, tax and business support to help you take your next step with confidence.</p><div class="actions"><Button href="/contact/">Book a consultation</Button><a class="hero-phone" href={`tel:${business.phoneLink}`}>Call {business.phone} <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 19 19 5M5 5h14v14" /></svg></a></div><div class="hero-assurance"><span>Personal service</span><span>Clear advice</span><span>Agreed fees</span></div></div>
-  <figure class="office-visual">
+  <figure class="finance-visual">
     <picture>
-      <source media="(min-width: 761px)" srcset="/accounting-office-800.webp 800w, /accounting-office-1400.webp 1400w" sizes="(min-width: 1440px) 720px, 50vw" />
-      <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1'/%3E" alt="Illustrative Moxin Sterling Advisory reception with the company name on the wall, navy seating and a client meeting room" width="1536" height="1024" fetchpriority="high" decoding="async" />
+      <source media="(min-width: 761px)" srcset="/finance-hero-800.webp 800w, /finance-hero-1400.webp 1400w" sizes="(min-width: 1440px) 720px, 50vw" />
+      <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1'/%3E" alt="Conceptual finance illustration of a financial report, gold cash-flow curve and navy architectural steps" width="1536" height="1024" fetchpriority="high" decoding="async" />
     </picture>
-    <figcaption><span>ACCOUNTING · TAX · ADVISORY</span>Clear advice.<br /><strong>A personal approach.</strong></figcaption>
+    <figcaption><span>MOXIN STERLING ADVISORY</span>A clear view.<br /><strong>A stronger foundation.</strong></figcaption>
   </figure>
  </div></section>
  <section class="section container"><div class="section-head"><div><p class="eyebrow">EXPERTISE THAT WORKS FOR YOU</p><h2>Your accounting.<br /><em>All in one place.</em></h2></div><p>From keeping your books in order to understanding what comes next, we bring practical support to every stage of your business.</p></div><div class="new-services">{services.map((service,i)=><a class="new-service" href={`/services/${service.slug}/`}><div class="service-top"><span class="service-symbol" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d={iconPaths[i]} /></svg></span></div><h3>{service.title}</h3><p>{service.description}</p><span class="service-more">Explore service <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 19 19 5M5 5h14v14" /></svg></span></a>)}</div></section>

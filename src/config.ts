@@ -12,6 +12,10 @@ export const business = {
   jurisdiction: null,
   incorporationVerified: false,
 };
+export const socialLinks = [
+  { label: "Facebook", url: "https://www.facebook.com/profile.php?id=61595915137610" },
+  { label: "LinkedIn", url: "https://www.linkedin.com/company/moxin-advisory/" },
+];
 export const site = {
   origin: import.meta.env.SITE_ORIGIN || "https://moxinadvisory.com",
   indexing: import.meta.env.PUBLIC_INDEXING !== "false",

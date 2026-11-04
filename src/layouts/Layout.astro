@@ -1,7 +1,7 @@
 ---
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import { business, site } from "../config";
+import { business, site, socialLinks } from "../config";
 import "@fontsource/poppins/latin-400.css";
 import "@fontsource/poppins/latin-500.css";
 import "@fontsource/poppins/latin-600.css";
@@ -59,6 +59,7 @@ const canonical = new URL(Astro.url.pathname, site.origin).href;
         areaServed: { "@type": "Country", name: "United Kingdom" },
         name: business.name,
         url: site.origin,
+        sameAs: socialLinks.map(link => link.url),
         email: business.email,
         telephone: business.phoneLink,
         address: { "@type": "PostalAddress", streetAddress: "15 Pen Castell", addressLocality: "Bangor", postalCode: "LL57 1NX", addressCountry: "GB" },
